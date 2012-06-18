@@ -1,0 +1,18 @@
+square_dist = square_dist •*• (y_segment(j) - hypothesis(j)) A 2; % Euclidean
+% distance end end
+% path metric and trellis are updated pathjnetric = square_dist - trellis(state. time - 1);
+if pathjnetnc • trellis( next_state. time) °o minimum Euclidean distance check trellis(next_state. time) = path_metric ;
+% minimum path metric or Euclidean distance stored and updated in matrix % trellis
+new_path( next_state. l:time ) = [path(state. l:time - 1) i]; % path corresponding to minimum path metric or Euclidean distance % stored and updated in matrix new_path end %(if) end     % (i) end        % (state) path = new_path: % path is updated with each new state (formation of trellis)
+% with the help of matrix new_path end          % (time)
+%-End-
+% * To make sure first row of path holds the information bits * % - Start -
+k2 = l;
+for j = 2:max_state
+if trellis (j. Ljotal) • trellis (k2. Ljotal) k2=j;
+end end
+trellis:
+path (1.1 :L_total) = path (k2. 1 :L_total):
+path;
+% - End -
+x_hat = path(l,l :L_info): °'i output of the soft-decision Viterbi decoder

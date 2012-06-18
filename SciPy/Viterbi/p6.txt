@@ -1,0 +1,18 @@
+% * Generating AWGN channel * % - Start -
+No®;
+noise = sqrt(No(i) * 0.5) * randn(l, Ltx);
+%-End-
+rec_bits = antipodal_conv + noise( 1 . length(antip<xial_conv));  % Addition of noise
+% to transmitted bits
+% * Hard - Decision Viterbi Decoding *
+% ------------------------------------ ;_
+% - Start -
+rec_bits(find(rec_bits ---= 0)) = 0; rec_bits(find(rec_bits > 0)) = 1; rec_bits;
+estimated_bits = hard_decode(g. rec_bits); %-End-
+°o * Bit Error Rate Calculation *
+%----------
+% - Start -
+out = dO - estunated_bits; ber(:.i) = sum(abs(out)) / (N): end    %LE ber_it(l:k.:) = ber; end        % kk avg_ber= sum(ber_it,l) ./ (iterat)
+% - End -
+% * Analytical Calculations * % _____ ........ . ......... ..
+%-Start-Ebn_db= [0:1:10];

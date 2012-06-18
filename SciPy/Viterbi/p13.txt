@@ -1,0 +1,21 @@
+end %-End-
+% * Determines trellis and path matrices at time 1 * % - Start -
+y_se2ment = r( 1.1 :n); for i = 0:1
+hypothesis = output(l. n * i -*• l:n * (i + 1));
+next_state = transition(L i + 1);
+hamming_dist = hard_dist(hypothesis, y_segment):
+path_metric = hamming_dist:
+trellis(next_state. 1) = path_metnc:
+path(next_state. 1) = i: end
+%-End-
+%_______________________________________________________
+% * Now determines trellis and path matrices for times 2 through L_total *
+% - Start -
+counter = n+ 1; for time = 2:L_total
+y_segment = r(l. counter:counter i- n -1); counter = counter + n; for state = 1 :max_state fori=0:l
+hypothesis = output(state. n * i + l:n * (i -*• 1)); 0 „ determines output bits depending on input bit(i) from output matrix
+next_state = transition(state. i +1);
+0» determines next state depending on input bit(i) from transition matrix
+hamming = hard_dist(hypothesis. y_segment); % computes Hamming Distance 0 o path metnc and trellis are updated path_metric = hamming + trellis(state. time -1);
+if path_metric > trelhs(next_state. time) °o maximum hamming distance check trelhs(next_state. time ) = path_merric:
+"o maximum path metnc or hamming distance stored and updated in matrix % trellis

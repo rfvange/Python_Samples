@@ -1,0 +1,28 @@
+% - Start -
+Ebn_db=[0:l:10];
+EBp = 0:0.1 :max(Ebn_db);
+EBpn = 10 / (EBp •' 10):                   % Numeric value of Eb/No
+BER = Qf(sqrt(2* EBpn));
+% - End -
+% * Plotting Commands * % - Start -
+figure (1)
+semilogy (EBp. BER. 1-'. Eb_No. avgjber. Y-. Xinewidth1. 2)
+title (' Plot of BER vs. Eb/ No1)
+xlabelCEb/No1)
+ylabel C Bit Error Rate (BER)")
+legend C Uncoded BPSK'.' code rate = 1/2 or 1/3 , m = 2 or 6, soft-decision (standard or
+tested) 0
+axis ([0 max(Ebn_db) 1E-6 1]) grid
+%-End-
+- encode block.m
+% * Convolunonal Encoder *
+function [y] = encode_block (g, x)
+% receives the generator polynomial and the input bit stream to be encoded
+% zero pads the input bit stream
+°o calls the function encode_bit
+% generates the output of the convolun'onal encoder
+[n, K] = size(g);  %g=l 1 1   n=2,K = 3 %    101
+m = K-l;            % no. of states = 2 'Tn=2A2 = 4 i.e. (00.01,10,11)
+[temp. L_info] = size(x);
+state = zeros(l. m);            % initializes the state vector i.e. state = [0 0]
+x = [x state] :                      % zero pads the input bit stream

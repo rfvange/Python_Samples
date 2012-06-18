@@ -1,0 +1,23 @@
+new_path(next_state. litime) = [path(state. 1 tune -1) i]; "/»path corresponding to maximum path metric or hamming distance % stored and updated in matrix new_path end  %(if) end     % (0 end        % (state) path = new_path:   % path is updated with each new state (formation of trellis)
+% with the help of matrix new_path end          % (time)
+% - End -
+% * To make sure first row of path holds the information bits *
+7. -------------------------------------------------------
+% - Start -
+12=1;
+for j = 2:max_state
+if trellis (j. Ljotal) > trellis (k2. Ljotal) k2=j:
+end end
+trellis:
+path (1. 1 :L_total) = path (k2. 1 :L_total);
+path;
+%-End-
+x_hat = path( 1 . 1 :L_info);    % output of the hard-decision Viterbi decoder
+- soft decode. in
+% * Soft - Decision Viterbi Decoder *
+function [xjiat] = soft_decode (g. r)
+% receives the generator polynomial and the comipted encoded data bit stream
+% initializes and updates matrices for storing the path metric (trellis)
+% and the corresponding path (path)
+°o calls the functions bin_state. encode_bit. int_state
+°s generates the output of the soft-decision Viterbi decoder

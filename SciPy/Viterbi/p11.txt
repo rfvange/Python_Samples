@@ -1,0 +1,21 @@
+L_total = L_info - m:
+% generates the encoded output bit stream
+for"i= l:L_total
+input_bit = x(l,i);
+[output_bits. state] = encode_bit (s. input_bit. state):
+y(n * (i-1) + l:n * i) = output_bits; end
+y;                  *•« output of the convolunonal encoder
+- encodejbit.m
+function [output, state] = encode_bit (g. input, state)
+°o receives the generator polynomial, the input bit to be encoded and input state bits % generates the encoded output bits corresponding to the input bit and input state bits % generates the next state bits corresponding to the input bit and input state bits
+[n.k] = size(g); m = k-l;
+°o determines the next output bit for i = 1 :n
+output© = ?(i. 1) * input: % generates the first & second output bit
+forj = 2:k " output® = xor (output(i). g(i. j) * state(j -1));
+end; end
+state = [input state(l :m -1)]:    % generates the next state corresponding to the input bit
+% and previous state
+- hard decode.m
+% * Hard - Decision Viterbi Decoder * %_______..........................____
+function [x_hat] = hard_decode(g. r)
+% receives the generator polynomial and the corrupted encoded data bit stream % initializes and updates matrices for storing the maximum path metric (trellis) °» and the corresponding path (path) % calls the functions bin state, encode bit. int state, hard dist

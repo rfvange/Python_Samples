@@ -1,0 +1,46 @@
+% - Start -
+
+    No(i);
+    noise = sqrt(No(i) * 0.5) * randn(1,Ltx);
+
+%-End-
+
+    rec_bits = antipodal_conv + noise(l:length(antipodal_conv));  % Addition of noise
+                                                              % to transmitted bits
+%---------------------
+% * Viterbi Decoding *
+% --------------------
+
+% - Start -
+
+% refer to hard_decision_Viterbi.m and soft_decision_Viterbi.m
+% the corresponding lines of code are shown and the function calls, depending
+% on the decoding process used
+
+%-End-
+
+% ------------------------------
+% * Bit Error Rate Calculation *
+% ------------------------------
+% - Start -
+
+    out = d0 - estimated_bits;
+    ber(:,i) = sum(abs(out)) / (N):
+  end %LE
+ ber_it(kk,:) = ber;
+ end      %kk
+avg_ber = sum(ber_it,1) ./ (iterat)
+
+% - End -
+
+% ------------------------------
+% * Analytical Calculations *
+% ------------------------------
+% - Start -
+
+Ebn_db = [0:1:10];
+EBp = 0:0.1:max(Ebn_db);
+EBpn = 10. ^ (EBp / 10);  % Numeric value of Eb/No
+BER = Qf(sqrt(2*EBpn));
+
+%-End-

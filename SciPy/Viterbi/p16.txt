@@ -1,0 +1,20 @@
+% - End -
+%---------------------------------------------------------
+% * Determines trellis and path matrices at time 1 *
+% - Start -
+y_seement = r(l. 1 :n): for i = 0:1
+hypothesis = 2 * output(l, n * i +1 :n * (i + 1)) -1;
+next_state = transition(l, i + 1);
+pathjaetric = 0:
+for j = 0:1 path_metric = pathjnetric + (y_segment(l, j - 1) - hypothesis(l, j +1)) A 2;
+end
+trellis(next_state. 1) = path_metric:
+path(next_state. 1) = i; end
+%-End-flag=0;
+% * Now determines trellis and path matrices for times 2 through L_total * % - Start -
+counter = n - 1: for time = 2:L_total
+y_segment = r( 1. countercounter + n -1); counter = counter + n; for state = 1 :max_state for i = 0:1
+hypothesis = 2 * output(state. n * i + 1 :n * (i + 1)) -1; % determines outpxtt bits depending on input bit© from output matrix
+next_state = transition( state, i •+• 1);
+% determines next state depending on input bit(i) from transition matrix
+° o computes squared Euclidian distance square_dist = 0; forj = l:n ify_segment())

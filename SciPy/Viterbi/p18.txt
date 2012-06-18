@@ -1,0 +1,22 @@
+- bin_state.m
+function [hard_state] = bm_state (int_state. m ) % generates all the states i.e 00, 01. 10. 11
+fori = m:-l:l
+state{m - i - 1) = fix(int_state / (2 A (i - 1)));
+mt_state = int_state - state(m - i + 1) * 2 A (i - 1); end
+haid_state = state;
+- int state.m
+function [int_states] = int_state (state)
+°» generates an integer value for the binary denoted state %i.e. 00=0.01=1.10=2. 11=3
+[dummy, m] = size( state):
+for i = 1 :m
+vect(i) = 2A(m-i); end state;
+int_states = state * vect';   % by multiplying state and vect' we get an integer value % for the binary denoted state i.e. 00=0. 01=1. 10=2, 11=3
+- hard dht.m
+function [y] = hard_dist (w.p)
+°» calailates the hamming distance
+[rl,cl] = size(w);
+[r2. c2] = size<p);
+hd = 0:
+if (cl ~= c2). errorOMatrix sizes do not match-1), end
+fori=l:cl
+hd = hd+l; end end v = hd;

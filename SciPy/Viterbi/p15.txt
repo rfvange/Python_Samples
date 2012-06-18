@@ -1,0 +1,28 @@
+% r = [3 -4 -4 3 3 3 -4 3 -4 -4]   % used to verify the theoretical working of the (2,1,3)
+% convolutional encoder
+[n. K] = size(g);
+m = K-l;
+max_state = 2 A m;                  % number of states
+[temp. rec_size] = size(r);
+L_total = rec_size / n;              % number of input bits including tail bits
+L_info = Ljotal - m:               % number of input bits excluding tail bits
+% set infinity to an arbitrarily large value inf=10A5;
+°o initializes trellis and path matrices trellis = inf * ones(max_state. Ljotal);
+% this matrix stores the minimum euclidean distances as the trellis is formed path = zeros(max_state. Ljotal);
+% this matrix keeps a track of the paths traced as we receive the codeword new_path = path:
+% * Initializes output and transition matrices *
+% - Start -
+for state = 1 :max_state state_vector = bin_state(state - 1. m);
+% generates the states i.e. state_vector= 00.01.10.1 1 when variable state = 1,2,3,4 [out_0. state_0] = encode_bit(g. 0. state_vector);
+% determines O'p and next state bits given current state(state_%-ector) and input bit = 0 [out_l. state_l] = encode_bit(g. 1. state_vector);
+% determines o p and next state bits given current state(state_vector) and input bit = 1 output(state. :) = [out_0 out_l];
+%        0    1    (received bits)
+% 00 00   11   (output bits given input states and received bits)
+%01 11   00
+%10 10  01
+%11 01   10 transition(state. :) = [(int_state(state_0) -*• 1) (int_state(state_l) + 1)];
+%      0   1    (received bits)
+0 o 00 1    3   (outputs states given input states and received bits)
+%01 2   4
+% 10 2   4
+%11 2   4 end

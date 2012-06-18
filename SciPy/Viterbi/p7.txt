@@ -1,0 +1,29 @@
+EBp = 0:0.1:rnax(Ebn_db);
+EBpn = 10 .A (EBp •' 10):              % Niuneric value of Eb/No
+= Qf(sqrt(2*EBpn));
+%-End-
+% ___________________
+% * Plotting Commands * «., __________ 1 ______________
+% - Start -
+figured)
+semilosy (EBp. BER. 1-'. Eb_No. avs_ber. Y'-'. linewidth'. 2)
+title ( 'Plot of BER vs. Eb .' No •)
+xlabelC Eb/No1)
+ylabel C Bit Error Rate (BER) 0
+lesendC Uncoded BPSK '. ' code rate = 1/2 or 1/3 . m = 2 or 6, hard-decision (standard or
+tested) ')
+axis([0 max(Ebn_db) 1E-6 1]) grid
+%-End-
+- soft_decision_V»f rbi.m
+o.o ***«***«»*»****»«***»****»****«****»****«*»*******«**«»***««»
+% * Soft - Output Viterbi Decoder with Convolutional Encodmg                   *
+% * _________________________________________________ ........... _______ T                     *
+clear all
+clc
+close all
+iterat = 3                        % number of trials
+N = 1 0000                     % number of input bits
+Eb_No = [2:l:7]; LE = length(Eb_No):
+forkk = 1 literal kk;
+dO = rand(l, N);        *« Generation of random input bits of length N used for testing the
+% FEC technique practically dO(find(dO>=0.5))=l; dO(find(dO • 0.5)) = 0;    % Conversion to orthogonal signal elements

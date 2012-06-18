@@ -1,0 +1,26 @@
+dO;
+% * Standard generator polynomials for which the FEC technique is implemented * % ____________ .1 ______________ .'. ______________________________________________________________
+% g = [ 1 , 1 . 1 ; 1 .0, 1 ]                         ° « generator polynomial for rate 1 >"1 m = 2
+% convolutional encoder % g = [ 1 .0.0. 1 . 1 . 1 . 1 : 1 . 1 ,0. 1 . 1 .0. 1 ]  % generator polynomial for rate 1 .'2 m = 6
+% convolutional encoder % g = [ 1 , 1 , 1 ; 1 , 1 , 1 ; 1 ,0, 1 ]                 ° o generator polynomial for rate 1 /3 m = 2
+% convolutional encoder
+% g = [1.0.0.1, 1.1.1:1.0,1,0.1. Ll;1.1.0.1.1.0.1] % generator polynomial for rate 1/3
+*im = 6 convolutional encoder
+% * Tested generator polynomials for which the FEC technique is implemented *
+'
+g = [1,1.1;1.0.1]         % generator polynomial for rate l'2m = 2 convolutional encoder % g = [1.0,1,1,0,1,1:1, 1.1.1.0.0.1]   % generator polynomial for rate 1 '2 m = 6
+% convolutional encoder %g = [1.0.1; 0,1.0; 1.1.0]                 °i generator polynomial for rate 1/3 m= 2
+% convolutional encoder
+%g = [1.0.1, 1,0,1,1;1,1,1.1,0,0,1;1,1,0,0.1,0.1] % generator polynomial for rate 1 /3
+% m = 6 convolutional encoder
+% * Convolutional Encoding *
+o/
+% -Start -
+antipodal_conv = encode_block(g.dO);  % output from the convolutional encoder used
+%-End-
+antipodal_conv(find(antipodal_conv >= 1)) = 1 ;   % conversion of encoded bits to
+% antipodal signal
+antipodal_conv(find(antipodal_conv <= 0)) = -1; antipodal_conv:
+Ltx = length(antipodal_conv);
+Eb_No:
+Es_No = Eb_No + 1 0 * logl 0 (1 / 2);     % Es_No calculated depending on the
